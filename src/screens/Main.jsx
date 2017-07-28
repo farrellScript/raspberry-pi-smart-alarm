@@ -1,15 +1,13 @@
 import React from 'react';
 import { render } from 'react-dom';
-import { HashRouter, Route } from 'react-router-dom';
-import Clock from './Clock.jsx';
-import Edit from './Edit.jsx';
+import { Provider } from 'react-redux'
+import Router from './Router.jsx';
+import store from '../store'
 
-const App = () =>
-  <HashRouter>
-    <div className="app">
-        <Route exact path="/" component={Clock} />
-        <Route path="/edit" component={Edit} />
-    </div>
-  </HashRouter>;
+const App = () => (
+  <Provider store={store}>
+    <Router/>
+  </Provider>
+)
 
-render(React.createElement(App), document.getElementById('app'));
+render(<App/>, document.getElementById('app'));
