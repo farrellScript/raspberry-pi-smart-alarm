@@ -1,9 +1,108 @@
-body {
-  display: flex;
-  align-items: center;
-  justify-content: center;
+* {
+  margin: 0;
+  padding: 0;
+}
 
-  color: #333;
+body {
+  color: #007acc;
+  background: #1e1e1e;
   font-family: 'Open Sans', sans-serif;
+  text-align: left;
+  padding: 0;
+  margin: 0;
+}
+
+.clock {
+  border-radius: 100%;
+  border: 5px solid #007acc;
+  width: 160px;
+  height: 160px;
+  position: relative;
+  margin: 10px;
+  float: left;
+  margin-top: 25px;
+}
+
+.clock .hour {
+  width: 45px;
+  height: 6px;
+  background-color: #007acc;
+  position: absolute;
+  top: 75px;
+  left: 82px;
+  border-radius: 6px;
+  -webkit-transform-origin: 0;
+  -webkit-transform: rotate(-45deg);
+}
+
+.clock .minute {
+  width: 70px;
+  height: 3px;
+  background-color: #007acc;
+  position: absolute;
+  top: 77px;
+  left: 82px;
+  -webkit-transform: rotate(-135deg);
+  -webkit-transform-origin: 0;
+  border-radius: 3px;
+}
+
+.clock .center {
+  width: 8px;
+  height: 8px;
+  position: absolute;
+  top: 74px;
+  left: 78px;
+  background-color: #007acc;
+  border-radius: 5px;
+}
+
+.controls {
+  width: 100px;
+  margin: 10px;
+  margin-top: 25px;
+  float: left;
+  height: 170px;
+  padding: 5px;
+}
+
+.controls .status {
+  font-weight: 400;
+  
+}
+
+.controls .status span {
+  margin-top: 4px;
+  display: block;
+  font-weight: 900;
   text-align: center;
+}
+
+.controls .button {
+  background: transparent;
+  border: none;
+  color: #1e1e1e;
+  margin-top: 15px;
+  margin-bottom: 5px;
+  text-align: center;
+  width: 100%;
+  font-weight: 900;
+}
+
+.controls .button a {
+  color: inherit;
+  border: 3px solid #007acc;
+  background: #007acc;
+  border-radius: 3px;
+  text-decoration: none;
+  padding: 10px 5px;
+  display: block;
+}
+
+.controls .button a:hover {
+  opacity: .7;
+}
+
+.controls .button a:focus {
+  
 }

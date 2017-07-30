@@ -13,9 +13,17 @@ class Clock extends React.Component {
         
         return (
             <div className="wrapper">
-                <div className="toolbar"><Link to="/edit">Edit</Link></div>
-                <div className="clock"><span>11</span>:<span>23</span></div>
-                <div className="message">Response: </div>
+                <div className="clock">
+                    <span className="hour"></span>
+                    <span className="minute"></span>
+                    <span className="center"></span>
+                </div>
+                <div className="controls">
+                    <p className="status">Alarm Time: <span>Off</span></p>
+                    <button className="button"><a href="#">Enable Alarm</a></button>
+                    <button className="button"><Link to="settings">Setting</Link></button>
+                </div>
+                
             </div>
         )
     }
