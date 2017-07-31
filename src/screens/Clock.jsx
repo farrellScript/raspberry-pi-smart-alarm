@@ -2,15 +2,19 @@ import React from 'react'
 import axios from 'axios'
 import moment from 'moment'
 import { connect } from 'react-redux'
-import {
-  BrowserRouter as Router,
-  Route,
-  Link
-} from 'react-router-dom'
+import { toggleAlarm } from '../actions'
+import { Link } from 'react-router-dom';
 
 class Clock extends React.Component {
+    constructor(props){
+        super(props)
+        this._toggleAlarm = this._toggleAlarm.bind(this)
+    }
+    _toggleAlarm(e){
+        e.preventDefault()
+        this.props.dispatch(toggleAlarm())
+    }
     render(){
-        
         return (
             <div className="wrapper">
                 <div className="clock">
@@ -19,16 +23,15 @@ class Clock extends React.Component {
                     <span className="center"></span>
                 </div>
                 <div className="controls">
-                    <p className="status">Alarm Time: <span>Off</span></p>
-                    <button className="button"><a href="#">Enable Alarm</a></button>
-                    <button className="button"><Link to="settings">Setting</Link></button>
+                    <p className="status">Alarm Time: <span>{this.props.alarm.get('alarmStatus') == false ? "off":"on"}</span></p>
+                    <button className="button"><a href="#" onClick={this._toggleAlarm}>Enable Alarm</a></button>
+                    <button className="button"><Link to="/settings">Setting</Link></button>
                 </div>
                 
             </div>
         )
     }
 }
-
 
 const mapStateToProps = state => {
   return {

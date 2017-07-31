@@ -8,7 +8,7 @@ const Router = () => (
     <HashRouter>
         <div className="app">
             <Route exact path="/" component={Clock} />
-            <Route path="/settings" component={Settings} />
+            <Route path="/Settings" component={Settings} />
         </div>
     </HashRouter>
 )

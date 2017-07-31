@@ -106,3 +106,59 @@ body {
 .controls .button a:focus {
   
 }
+
+.settings-controls li {
+  float: left;
+  width: calc(50% - 20px);
+  list-style: none;
+  padding: 10px;
+  height: 60px;
+}
+
+.settings-controls li.buttons {
+  padding-top: 0;
+}
+
+.settings-controls li:nth-child(2n):after {
+  clear: both;
+  display: block;
+  content: ''
+}
+
+.settings-controls li input{
+  border: none;
+  border-bottom: 1px solid #007acc;
+  background: transparent;
+  color: #007acc;
+  padding-bottom: 2px;
+}
+
+.settings-controls li input:focus{
+  outline: none;
+  border-bottom: 3px solid #007acc;
+}
+
+.settings-controls .button {
+  background: transparent;
+  border: none;
+  color: #1e1e1e;
+  margin-top: 0px;
+  margin-bottom: 5px;
+  text-align: center;
+  width: calc(100% - 10px);
+  font-weight: 900;
+}
+
+.settings-controls .button a {
+  color: inherit;
+  border: 3px solid #007acc;
+  background: #007acc;
+  border-radius: 3px;
+  text-decoration: none;
+  padding: 10px 5px;
+  display: block;
+}
+
+.settings-controls .button a:hover {
+  opacity: .7;
+}
