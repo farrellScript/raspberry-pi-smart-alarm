@@ -1,19 +1,17 @@
 import {
-  SET_TIME,
-  TOGGLE_ALARM
+  TOGGLE_ALARM,
+  UPDATE_SETTING
 } from './types'
-
-export const setTime = (time) => {
-  return {
-    payload: time,
-    type: SET_TIME
-  }
-
-}
 
 export const toggleAlarm = () => {
   return {
     type: TOGGLE_ALARM
   }
+}
 
+export const updateSetting = (key,value) => {
+  return {
+    type: UPDATE_SETTING,
+    payload: { key,value }
+  }
 }

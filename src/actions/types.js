@@ -1,2 +1,2 @@
-export const SET_TIME = 'set_time'
 export const TOGGLE_ALARM = 'toggle_alarm'
+export const UPDATE_SETTING = 'update_setting'

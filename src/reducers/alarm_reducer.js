@@ -1,24 +1,24 @@
-import { SET_TIME,TOGGLE_ALARM } from '../actions/types'
+import { TOGGLE_ALARM, UPDATE_SETTING, SAVE_SETTINGS } from '../actions/types'
 import { fromJS } from 'immutable'
 
 const DEFAULT_STATE = fromJS({
-  startLocation:'',
-  endLocation: '',
-  currentTime: null,
-  alarmTime: null,
-  alarmStatus: false
+  alarmStatus: false,
+  apiKey:'1',
+  alarmTime:'2',
+  startLocation:'3',
+  endLocation:'4'
 })
 
 export default function(state = DEFAULT_STATE, action) {
-  switch (action.type) {
-    case SET_TIME:
-      let setTime = state.set(currentTime,action.payload)
-      return setTime    
+  switch (action.type) {    
     case TOGGLE_ALARM:
       let toggleAlarm = state.update('alarmStatus', x => {
         return !x
       })
-      return toggleAlarm            
+      return toggleAlarm
+    case UPDATE_SETTING:
+      let updatedSetting = state.set(action.payload.key,action.payload.value)
+      return updatedSetting       
     default:
       return state
   }
