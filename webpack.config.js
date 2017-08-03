@@ -3,7 +3,7 @@ const webpack = require('webpack');
 
 const config = {
   context: __dirname,
-  entry: ['./src/screens/Main.jsx'],
+  entry: ['./src/components/Main.jsx'],
   devtool: 'true',
   output: {
     path: path.resolve(__dirname, 'src/bundle'),
