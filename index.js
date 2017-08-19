@@ -8,7 +8,7 @@ app.on('ready',()=>{
     width: 320,
     height: 240
   });
-  mainWindow.loadURL(path.join('file://',__dirname,'index.html'));
+  mainWindow.loadURL(path.join('file://',__dirname,'public/index.html'));
   mainWindow.on('ready-to-show',()=>{
     mainWindow.show();
   });

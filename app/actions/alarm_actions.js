@@ -1,7 +1,8 @@
 import {
   TOGGLE_ALARM,
   UPDATE_SETTING,
-  TOGGLE_SETTINGS
+  TOGGLE_SETTINGS,
+  DISABLE_ALARM
 } from './types'
 
 export const toggleAlarm = () => {
@@ -20,5 +21,11 @@ export const updateSetting = (key,value) => {
 export const toggleSettings = () => {
   return {
     type: TOGGLE_SETTINGS
+  }
+}
+
+export const disableAlarm = () => {
+  return {
+    type: DISABLE_ALARM
   }
 }

@@ -1,5 +1,6 @@
 import { createStore, compose, applyMiddleware } from 'redux';
 import thunk from 'redux-thunk';
+import { AsyncNodeStorage } from 'redux-persist-node-storage'
 import { persistStore, autoRehydrate } from 'redux-persist';
 import reducers from '../reducers';
 
@@ -8,10 +9,10 @@ const store = createStore(
   {},
   compose(
     applyMiddleware(thunk),
-    // autoRehydrate()
+    autoRehydrate()
   )
 );
 
-// persistStore(store, { storage: AsyncStorage });
+persistStore(store, { storage: new AsyncNodeStorage('/tmp/storageDir') })
 
 export default store;

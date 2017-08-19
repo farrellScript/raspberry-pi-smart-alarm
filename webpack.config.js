@@ -3,12 +3,12 @@ const webpack = require('webpack');
 
 const config = {
   context: __dirname,
-  entry: ['./src/components/Main.jsx'],
+  entry: ['./app/components/Main.jsx'],
   devtool: 'true',
   output: {
-    path: path.resolve(__dirname, 'src/bundle'),
+    path: path.resolve(__dirname, 'public/js'),
     filename: 'bundle.js',
-    publicPath: '/src/bundle/'
+    publicPath: '/public/js/'
   },
   resolve: {
     extensions: ['.js', '.jsx', '.json'],
@@ -18,6 +18,7 @@ const config = {
     reasons: true,
     chunks: false
   },
+  target: "electron",
   module: {
     loaders: [
       {
